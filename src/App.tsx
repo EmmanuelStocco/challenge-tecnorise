@@ -47,9 +47,9 @@ function App() {
       },
       body: JSON.stringify({ query})
     }); 
-    const data = await res.json();
+    const {data} = await res.json();
     console.log('restpo', res)
-    console.log('Data:', data);
+    console.log('Data:', data.search.edges);
     // console.log('Data:', data.data.repository.owner.login);
 
   }
