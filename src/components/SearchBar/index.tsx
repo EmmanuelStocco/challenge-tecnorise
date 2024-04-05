@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Input } from './styled';
+import { Container, Input } from './style';
 
 interface SearchBarProps {
   onSearch: (searchTerm: string) => void;
