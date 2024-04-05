@@ -5,8 +5,9 @@ import { ToggleButton } from './styles/styles';
 import { SearchBar } from './components/SearchBar';
 import HomePage from './pages';
 import TextIntro from './components/TextTitle'; 
-import { getRepositoryDetailsById, searchForTermOnAPI } from './services';
-
+import { searchForTermOnAPI } from './services';
+import { Provider } from 'react-redux'
+import store from './store'
 
 function App() { 
   const [theme, setTheme] = useState(darkTheme);
@@ -20,6 +21,7 @@ function App() {
     // getRepositoryDetailsById('react', 'facebook')
   };
   return (
+    <Provider store={store}>
     <ThemeProvider theme={theme}>  
        <HomePage>
         <ToggleButton onClick={toggleTheme}>Toggle Theme</ToggleButton> 
@@ -27,6 +29,7 @@ function App() {
         <SearchBar handleSearch={handleSearch} />   
        </HomePage>
     </ThemeProvider>
+    </Provider>
   );
 }
 
