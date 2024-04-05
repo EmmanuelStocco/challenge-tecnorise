@@ -22,3 +22,18 @@ export const Input = styled.input`
     color: ${(props) => props.theme.colors.text};
   }
 `;
+
+
+export const ButtonSearch = styled.button`
+  background-color: ${(props) => props.theme.colors.primary};
+  width: 15%;
+  right: 40px;
+  height: 3rem;
+  position: absolute;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+  cursor: pointer;
+`;
