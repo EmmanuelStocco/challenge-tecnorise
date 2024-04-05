@@ -16,4 +16,9 @@ export const Input = styled.input`
   outline: none;
   background: transparent;
   color: ${(props) => props.theme.colors.text};
+  margin-left: 1rem;
+
+  &::placeholder {
+    color: ${(props) => props.theme.colors.text};
+  }
 `;
