@@ -14,11 +14,10 @@ function App() {
     setTheme((prevTheme) => (prevTheme === lightTheme ? darkTheme : lightTheme)); 
   };  
 
-  async function searchForTermOnAPI(searchTerm: string) {
-    const escapedSearchTerm = JSON.stringify(searchTerm);
+  async function searchForTermOnAPI(searchTerm: string) { 
     const query = `
     query {
-      search(query: ${escapedSearchTerm}, type: REPOSITORY, first: 10) {
+      search(query: "${searchTerm}", type: REPOSITORY, first: 10) {
         edges {
           node {
             ... on Repository {
@@ -49,12 +48,9 @@ function App() {
   }
 
 
-  async function getRepositoryDetailsById(repoName?: string, repoUser?: string) {
-    // const formatterRepoName = JSON.stringify(repoName);
-    // const formatterRepoUser = JSON.stringify(repoUser); 
-
+  async function getRepositoryDetailsById(repoName: string, repoUser: string) { 
      const query = `{
-      repository(name: "react", owner: "facebook") {
+      repository(name: "${repoName}", owner: "${repoUser}") {
         name
         description
         owner {
@@ -107,8 +103,8 @@ function App() {
   
 
   const handleSearch = (searchTerm: string) => { 
-    //  searchForTermOnAPI(searchTerm)  
-     getRepositoryDetailsById()
+    // searchForTermOnAPI(searchTerm)  
+    // getRepositoryDetailsById('react', 'facebook')
   };
   return (
     <ThemeProvider theme={theme}>  
