@@ -1,23 +1,26 @@
-import React from 'react'; 
+import React, { useState } from 'react'; 
 import './App.css';
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from './theme';
+
 
 function App() {
+  const [theme, setTheme] = useState(lightTheme);
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === lightTheme ? darkTheme : lightTheme)); 
+  };
+
   return (
-    <div className="App">
-      <header className="App-header"> 
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <header className="App-header"> 
+        <button onClick={toggleTheme}>Toggle Theme</button>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </p> 
+        </header>
+      </div>
+    </ThemeProvider>
   );
 }
 
