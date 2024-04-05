@@ -11,17 +11,8 @@ function App() {
   const [theme, setTheme] = useState(darkTheme);
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === lightTheme ? darkTheme : lightTheme)); 
-  }; 
-  // const query = `{
-  //   repository(name: "github-cms", owner: "sharu725") {
-  //     owner {
-  //       login
-  //     }
-  //   }
-  // }`;
-
-
-
+  };  
+ 
   async function load(searchTerm: string) {
     const escapedSearchTerm = JSON.stringify(searchTerm);
     const query = `
@@ -30,6 +21,7 @@ function App() {
         edges {
           node {
             ... on Repository {
+              id
               name
               description
               owner {
