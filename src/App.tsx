@@ -17,17 +17,12 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
+    <ThemeProvider theme={theme}> 
         <header className="App-header"> 
         <SearchBar onSearch={handleSearch} />
 
-        <button onClick={toggleTheme}>Toggle Theme</button>
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p> 
-        </header>
-      </div>
+        <button onClick={toggleTheme}>Toggle Theme</button> 
+        </header> 
     </ThemeProvider>
   );
 }
