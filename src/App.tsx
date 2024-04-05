@@ -4,10 +4,10 @@ import { lightTheme, darkTheme } from './styles/theme';
 import { ToggleButton } from './styles/styles'; 
 import { SearchBar } from './components/SearchBar';
 import HomePage from './pages';
-import TextIntro from './components/TextTitle';
+import TextIntro from './components/TextTitle'; 
 
 
-function App() {
+function App() { 
   const [theme, setTheme] = useState(darkTheme);
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === lightTheme ? darkTheme : lightTheme)); 
@@ -45,17 +45,17 @@ function App() {
     const res = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
-        Authorization: `bearer BEARER`,
+        Authorization: `bearer ${process.env.REACT_APP_GIT_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({ query})
     }); 
-    const data = await res.json();
+    const { data } = await res.json();
     // console.log('restpo', res)
-    console.log('Data:', data); 
+    console.log('Data:', data.search.edges); 
   }
 
-  const handleSearch = (searchTerm: string) => {  
+  const handleSearch = (searchTerm: string) => { 
     load(searchTerm)
   };
   return (
