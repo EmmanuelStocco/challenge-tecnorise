@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; 
 import './App.css';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './theme';
+import { lightTheme, darkTheme } from './styles/theme';
 
 
 function App() {
