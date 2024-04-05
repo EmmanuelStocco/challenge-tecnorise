@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  width: 25rem;
-  height: 5rem;
+  width: 35rem;
+  height: 3rem;
   background-color: ${(props) => props.theme.colors.container};
-  border-radius: 5px;
+  border-radius: 25px;
   padding: 0 1rem;
 `;
 

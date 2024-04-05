@@ -19,8 +19,8 @@ export const lightTheme = {
   // dark.ts
   export const darkTheme = {
     colors: {
-      background: '#333',
-      container: '#6c757d',
+      background: '#231F20',
+      container: '#BABABAF3',
       text: '#f9f9f9',
       primary: '#17a2b8',
       secondary: '#6c757d',
