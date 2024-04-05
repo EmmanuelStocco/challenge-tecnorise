@@ -13,7 +13,7 @@ function App() {
     setTheme((prevTheme) => (prevTheme === lightTheme ? darkTheme : lightTheme)); 
   };  
  
-  async function load(searchTerm: string) {
+  async function searchForTermOnAPI(searchTerm: string) {
     const escapedSearchTerm = JSON.stringify(searchTerm);
     const query = `
     query {
@@ -48,7 +48,7 @@ function App() {
   }
 
   const handleSearch = (searchTerm: string) => { 
-    load(searchTerm)
+    searchForTermOnAPI(searchTerm)
   };
   return (
     <ThemeProvider theme={theme}>  
