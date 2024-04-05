@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   width: 25rem;
   height: 5rem;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.container};
   border-radius: 5px;
   padding: 0 1rem;
 `;

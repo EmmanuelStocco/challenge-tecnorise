@@ -8,7 +8,11 @@ export const ToggleButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 2rem;
+  margin-top: 2rem;
   &:hover {
     background-color: ${(props) => props.theme.colors.primary};
   }

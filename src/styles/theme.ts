@@ -2,7 +2,8 @@
 export const lightTheme = {
     colors: {
       background: '#f9f9f9',
-      text: '#333',
+      container: '#333',
+      text: '#f8f9fa',
       primary: '#007bff',
       secondary: '#6c757d',
       success: '#28a745',
@@ -19,6 +20,7 @@ export const lightTheme = {
   export const darkTheme = {
     colors: {
       background: '#333',
+      container: '#6c757d',
       text: '#f9f9f9',
       primary: '#17a2b8',
       secondary: '#6c757d',
