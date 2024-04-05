@@ -12,13 +12,31 @@ function App() {
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === lightTheme ? darkTheme : lightTheme)); 
   }; 
-  const query = `{
-    repository(name: "github-cms", owner: "sharu725") {
-      owner {
-        login
+  // const query = `{
+  //   repository(name: "github-cms", owner: "sharu725") {
+  //     owner {
+  //       login
+  //     }
+  //   }
+  // }`;
+
+  const query = `
+  query {
+    search(query: "react", type: REPOSITORY, first: 10) {
+      edges {
+        node {
+          ... on Repository {
+            name
+            description
+            owner {
+              login
+            }
+          }
+        }
       }
     }
-  }`;
+  }
+`;
 
   async function load() {
     const res = await fetch("https://api.github.com/graphql", {
@@ -31,7 +49,8 @@ function App() {
     }); 
     const data = await res.json();
     console.log('restpo', res)
-    console.log('Data:', data.data.repository.owner.login);
+    console.log('Data:', data);
+    // console.log('Data:', data.data.repository.owner.login);
 
   }
 
