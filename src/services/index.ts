@@ -26,8 +26,7 @@ export async function searchForTermOnAPI(searchTerm: string) {
       },
       body: JSON.stringify({ query})
     }); 
-    const { data } = await res.json();
-    // console.log('restpo', res)
+    const { data } = await res.json(); 
     console.log('Data:', data.search.edges); 
   }
 

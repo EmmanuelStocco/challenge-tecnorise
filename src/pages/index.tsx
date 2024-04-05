@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { Container } from './style';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
@@ -24,11 +24,16 @@ interface OwnProps {
 
 type Props = StateProps & DispatchProps & OwnProps
 
-const HomePage: React.FC<Props> = ({ children, repositories }) => {
-  console.log('repositories TESTE AGRESSIVO', repositories)
+const HomePage: React.FC<Props> = (props) => {
+  useEffect(() => {
+    const {loadRequest} = props;
+    loadRequest()
+  }, [])
+  
+  console.log('repositories TESTE AGRESSIVO', props.repositories.map(repository => repository.name))
   return (
     <Container>
-      {children}
+      {props.children}
     </Container>
   );
 }; 
