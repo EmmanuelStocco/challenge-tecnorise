@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Input } from './style';
 import { FiSearch } from 'react-icons/fi'; 
 
 interface SearchBarProps {
-  onSearch: (searchTerm: string) => void;
+  handleSearch: (searchTerm: string) => void;
 }
 
-export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onSearch(e.target.value);
+export const SearchBar: React.FC<SearchBarProps> = ({ handleSearch }) => {
+  const [repoName, setRepoName] = useState<string>("")
+  const handleSearchOn = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleSearch(e.target.value);
   };
 
   return (
     <Container>
       <FiSearch /> 
-      <Input type="text" placeholder="Pesquise por repositórios..." onChange={handleSearch} />
+      <Input type="text" placeholder="Pesquise por repositórios..." onChange={handleSearchOn} />
     </Container>
   );
 };
