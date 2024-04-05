@@ -20,43 +20,43 @@ function App() {
   //   }
   // }`;
 
-  const query = `
-  query {
-    search(query: "react", type: REPOSITORY, first: 10) {
-      edges {
-        node {
-          ... on Repository {
-            name
-            description
-            owner {
-              login
+
+
+  async function load(searchTerm: string) {
+    const escapedSearchTerm = JSON.stringify(searchTerm);
+    const query = `
+    query {
+      search(query: ${escapedSearchTerm}, type: REPOSITORY, first: 10) {
+        edges {
+          node {
+            ... on Repository {
+              name
+              description
+              owner {
+                login
+              }
             }
           }
         }
       }
     }
-  }
-`;
+  `;
 
-  async function load() {
     const res = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
-        Authorization: `bearer Bearer`,
+        Authorization: `bearer BEARER`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({ query})
     }); 
-    const {data} = await res.json();
-    console.log('restpo', res)
-    console.log('Data:', data.search.edges);
-    // console.log('Data:', data.data.repository.owner.login);
-
+    const data = await res.json();
+    // console.log('restpo', res)
+    console.log('Data:', data); 
   }
 
-  const handleSearch = (searchTerm: string) => {
-    console.log('Search term2:', searchTerm); 
-    load()
+  const handleSearch = (searchTerm: string) => {  
+    load(searchTerm)
   };
   return (
     <ThemeProvider theme={theme}>  

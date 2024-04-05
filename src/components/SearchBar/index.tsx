@@ -10,7 +10,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ handleSearch }) => {
   const [repoName, setRepoName] = useState<string>("")
 
   const runHandleSearchOn = () => {
-    // handleSearch(repoName); 
+    handleSearch(repoName); 
   };
 
   const handleRepoName = (e: React.ChangeEvent<HTMLInputElement>) => {
