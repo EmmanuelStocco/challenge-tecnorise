@@ -6,6 +6,6 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.titleText};
   font-size: 24px;
 `;
