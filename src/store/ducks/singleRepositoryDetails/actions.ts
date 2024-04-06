@@ -10,3 +10,6 @@ export const loadSingleRepositorySuccess = (data: SingleRepositoryDetails) =>
 
 export const loadSingleRepositoryFailure = () =>
   action(SingleRepositoryDetailsTypes.LOAD_FAILURE);
+
+export const resetSingleRepositoryDetails = () =>
+  action(SingleRepositoryDetailsTypes.RESET_SINGLE_REPOSITORY_DETAILS);

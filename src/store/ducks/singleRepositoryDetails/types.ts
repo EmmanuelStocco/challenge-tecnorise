@@ -1,7 +1,8 @@
 export  enum SingleRepositoryDetailsTypes {
     LOAD_REQUEST = '@singleRepositoryInfos/LOAD_REQUEST',
     LOAD_SUCCESS = '@singleRepositoryInfos/LOAD_SUCCESS',
-    LOAD_FAILURE = '@singleRepositoryInfos/LOAD_FAILURE'
+    LOAD_FAILURE = '@singleRepositoryInfos/LOAD_FAILURE',
+    RESET_SINGLE_REPOSITORY_DETAILS = '@singleRepositoryInfos/RESET_SINGLE_REPOSITORY_DETAILS',
 };
 
 export interface SingleRepositoryDetails {

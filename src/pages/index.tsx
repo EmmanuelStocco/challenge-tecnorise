@@ -10,6 +10,7 @@ import { Container } from './style';
 import { SearchBar } from '../components/SearchBar'; 
 import TextIntro from '../components/TextTitle'; 
 import { RepositoryTable } from '../components/RepositoryTable';
+import Modal from '../components/Modal';
 
 interface StateProps {
   repositories: Repository[]
@@ -43,10 +44,11 @@ const HomePage: React.FC<Props> = (props) => {
   //   loadSingleRepository('react', 'facebook');
   // };
 
-  // useEffect(() => {
-  //   // console.log('repositories XXX', repositories);
-  //   // console.log('singleRepositoryDetails', singleRepositoryDetails)
-  // }, [repositories, singleRepositoryDetails]);
+  useEffect(() => {
+    // console.log('repositories XXX', repositories);
+    console.log('singleRepositoryDetails', singleRepositoryDetails)
+  }, [repositories, singleRepositoryDetails]);
+ 
 
   return (
     <Container>
@@ -57,6 +59,11 @@ const HomePage: React.FC<Props> = (props) => {
       {
         repositories.length > 0 && <RepositoryTable  repositories={repositories} />
       } 
+
+      {
+        !!singleRepositoryDetails && 
+        <Modal />
+      }
     </Container>
   );
 };
