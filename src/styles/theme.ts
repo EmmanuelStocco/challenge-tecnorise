@@ -2,9 +2,9 @@
 export const lightTheme = {
     colors: {
       background: '#f9f9f9',
-      container: '#333',
+      container: '#A9A4A4F3',
       text: '#f8f9fa',
-      titleText: '#333',
+      titleText: 'hsl(0 0% 20%)',
       primary: '#007bff',
       secondary: '#6c757d',
       success: '#28a745',
@@ -24,7 +24,7 @@ export const lightTheme = {
       container: '#A9A4A4F3',
       text: '#f9f9f9',
       titleText: '#f9f9f9',
-      primary: '#17a2b8',
+      primary: '#007bff',
       secondary: '#6c757d',
       success: '#28a745',
       danger: '#dc3545',
