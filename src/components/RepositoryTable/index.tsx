@@ -29,6 +29,7 @@ export function RepositoryTable  ({ repositories }: TableProps) {
           <TableHeadCell>Proprietário</TableHeadCell>
         </TableHeadRow>
       </TableHead>
+      
       <TableBody>
         {repositories.map((repo) => (
           <TableBodyRow 

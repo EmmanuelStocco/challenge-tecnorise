@@ -1,7 +1,7 @@
 export async function searchForTermOnAPI(searchTerm: string) { 
     const query = `
     query {
-      search(query: "${searchTerm}", type: REPOSITORY, first: 10) {
+      search(query: "${searchTerm}", type: REPOSITORY, first: 20) {
         edges {
           node {
             ... on Repository {
