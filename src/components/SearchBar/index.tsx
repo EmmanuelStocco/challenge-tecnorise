@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ButtonSearch, Container, Input } from './style';
 import { FiSearch } from 'react-icons/fi'; 
+import { ButtonSearch, Container, Input } from './style';
 
 interface SearchBarProps {
   handleSearch: (searchTerm: string) => void;

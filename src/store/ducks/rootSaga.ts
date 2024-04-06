@@ -1,13 +1,14 @@
 import { all, takeLatest } from 'redux-saga/effects';
 import { ActionType } from 'typesafe-actions';
 
-import { RepositoriesTypes } from './repositories/types'
-import { load } from './repositories/sagas'
+import { RepositoriesTypes } from './repositories/types';
+import { load } from './repositories/sagas';
 import { loadRequest } from './repositories/actions';
 
-import { SingleRepositoryDetailsTypes } from './singleRepositoryDetails/types'
-import { loadSingleRepositoryDetails } from './singleRepositoryDetails/sagas'
-import { loadSingleRepositoryRequest } from './singleRepositoryDetails/actions'
+import { SingleRepositoryDetailsTypes } from './singleRepositoryDetails/types';
+import { loadSingleRepositoryDetails } from './singleRepositoryDetails/sagas';
+import { loadSingleRepositoryRequest } from './singleRepositoryDetails/actions';
+
 
  interface LoadRequestAction extends ActionType<typeof loadRequest> {
     payload: {

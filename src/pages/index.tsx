@@ -1,14 +1,14 @@
 import React, { ReactNode, useEffect } from 'react';
-import { Container } from './style';
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import { Repository } from '../store/ducks/repositories/types';
-import { SingleRepositoryDetails } from '../store/ducks/singleRepositoryDetails/types'
-import { bindActionCreators, Dispatch } from 'redux';
+import { SingleRepositoryDetails } from '../store/ducks/singleRepositoryDetails/types';
+import { loadSingleRepositoryRequest } from '../store/ducks/singleRepositoryDetails/actions';
 import * as RepositoriesActions from '../store/ducks/repositories/actions';
+import { Container } from './style';
 import { SearchBar } from '../components/SearchBar'; 
 import TextIntro from '../components/TextTitle'; 
-import { loadSingleRepositoryRequest } from '../store/ducks/singleRepositoryDetails/actions';
 
 interface StateProps {
   repositories: Repository[]

@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
-import { searchForTermOnAPI } from '../../../services'; 
 import { loadSuccess, loadFailure } from '../repositories/actions';
+import { searchForTermOnAPI } from '../../../services'; 
 
 export function* load(searchTerm: string) : Generator<any, void, any> {
     try {   

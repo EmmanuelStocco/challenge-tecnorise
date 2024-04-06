@@ -1,13 +1,11 @@
-import React, { useState } from 'react';  
+import React, { useState } from 'react';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
+import { ToggleButton } from './styles/styles';
 import { lightTheme, darkTheme } from './styles/theme'; 
-import { ToggleButton } from './styles/styles'; 
-import { SearchBar } from './components/SearchBar';
-import HomePage from './pages';
-import TextIntro from './components/TextTitle'; 
-import { searchForTermOnAPI } from './services';
-import { Provider } from 'react-redux'
-import store from './store'
+import HomePage from './pages'; 
+import store from './store';
+
 
 function App() { 
   const [theme, setTheme] = useState(darkTheme);
