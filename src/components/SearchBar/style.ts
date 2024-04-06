@@ -10,7 +10,7 @@ export const Container = styled.div`
   border-radius: 25px;
   padding: 0 1rem;
   position: relative;
-
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
   @media screen and (max-width: 768px) {
     width: 90%;
     max-width: 20rem;
