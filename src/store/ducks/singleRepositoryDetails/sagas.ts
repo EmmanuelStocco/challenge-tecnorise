@@ -5,8 +5,6 @@ import { loadSingleRepositorySuccess, loadSingleRepositoryFailure } from '../sin
 export function* loadSingleRepositoryDetails(repoName: string, repoUser: string) : Generator<any, void, any> {
     try {   
         const response = yield call(searchSingleRepositoryDetailsById, repoName, repoUser);
-        console.log('loadSingleRepositoryDetails', response)
-        
         yield put(loadSingleRepositorySuccess(response))
     } catch (err) {
         console.log('err', err)

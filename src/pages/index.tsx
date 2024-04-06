@@ -14,7 +14,7 @@ import Modal from '../components/Modal';
 
 interface StateProps {
   repositories: Repository[]
-  singleRepositoryDetails: SingleRepositoryDetails
+  singleRepositoryDetails: {repository: SingleRepositoryDetails}
 };
 
 interface DispatchProps {
@@ -32,8 +32,7 @@ const HomePage: React.FC<Props> = (props) => {
   const { 
     repositories,
     singleRepositoryDetails,
-    loadRequest,
-    loadSingleRepository 
+    loadRequest
   } = props;
 
   const handleSearch = (searchTerm: string) => { 
@@ -48,7 +47,7 @@ const HomePage: React.FC<Props> = (props) => {
   //   // console.log('repositories XXX', repositories);
   //   console.log('singleRepositoryDetails', singleRepositoryDetails)
   // }, [repositories, singleRepositoryDetails]);
- 
+//  console.log('singleRepositoryDetails', singleRepositoryDetails)
 
   return (
     <Container>
@@ -62,7 +61,7 @@ const HomePage: React.FC<Props> = (props) => {
 
       {
         !!singleRepositoryDetails && 
-        <Modal />
+        <Modal data={singleRepositoryDetails.repository} />
       }
     </Container>
   );
