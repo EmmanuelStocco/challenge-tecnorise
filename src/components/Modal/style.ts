@@ -71,9 +71,14 @@ export const ModalCloseButton = styled.button`
   top: 0.5rem;
   right: 0.5rem;
   background-color: transparent;
-  border: none;
+  border: 1px solid ${(props) => props.theme.colors.text}; /* Adiciona uma borda */
+  border-radius: 50%; /* Deixa o botão redondo */
+  width: 2rem; /* Define a largura do botão */
+  height: 2rem; /* Define a altura do botão */
   font-size: 1.2rem;
   color: ${(props) => props.theme.colors.text};
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 `;
- 

@@ -14,8 +14,7 @@ interface ModalProps {
     data: SingleRepositoryDetails
 }
 
-const Modal: React.FC<ModalProps> = ({ data }) => { 
-    console.log('data', data)
+const Modal: React.FC<ModalProps> = ({ data }) => {
     const dispatch = useDispatch(); 
     const handleClose = () => {
         dispatch(resetSingleRepositoryDetails());
@@ -31,7 +30,7 @@ const Modal: React.FC<ModalProps> = ({ data }) => {
         }
       
         return data;
-      }; 
+    }; 
 
       
 
@@ -44,15 +43,15 @@ const Modal: React.FC<ModalProps> = ({ data }) => {
                 <ModalDescription>{data.description}</ModalDescription>
 
                 <div>
-                    <p><FaEye style={{ color: 'blueviolet' }}/> Seguidores: {data.watchers.totalCount}</p>
-                    <p><FaExclamationTriangle style={{ color: 'darkorange' }}/>Issues: {data.issues.totalCount}</p>
-                    <p><FaStar style={{ color: 'yellow' }}/><FaStar style={{ color: 'yellow' }}/><FaStar /> Estrelas: {data.stargazerCount}</p>
-                    <p><FaCodeBranch style={{ color: 'orange' }} />Forks: {data.forks.totalCount}</p>
-                    <p><FaCode style={{ color: 'black' }}/> Pull Request: {data.pullRequests.totalCount}</p>
-                    <p><FaUser style={{ color: 'maroon' }}/> Proprietário: {data.owner.login} </p>  
-                    <p><FaGit style={{ color: 'black' }}/> Commits totais: {data.defaultBranchRef.target.history.totalCount} </p>  
+                    <p><FaEye size={24} style={{ color: 'blueviolet' }}/> Seguidores: {data.watchers.totalCount}</p>
+                    <p><FaExclamationTriangle size={24} style={{ color: 'darkorange' }}/>Issues: {data.issues.totalCount}</p>
+                    <p><FaStar size={24} style={{ color: 'yellow' }}/> Estrelas: {data.stargazerCount}</p>
+                    <p><FaCodeBranch size={24} style={{ color: 'orange' }} />Forks: {data.forks.totalCount}</p>
+                    <p><FaCode size={24} style={{ color: 'black' }}/> Pull Request: {data.pullRequests.totalCount}</p>
+                    <p><FaUser size={24} style={{ color: 'maroon' }}/> Proprietário: {data.owner.login} </p>  
+                    <p><FaGit size={24} style={{ color: 'black' }}/> Commits totais: {data.defaultBranchRef.target.history.totalCount} </p>  
                     <p>
-                    <FaBook /> Última atualização: {dateFormatter(data.updatedAt)}
+                    <FaBook size={24} /> Última Att: {dateFormatter(data.updatedAt)}
                     </p> 
                 </div>
                     
