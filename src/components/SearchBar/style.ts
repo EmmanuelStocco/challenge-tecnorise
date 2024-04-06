@@ -8,6 +8,7 @@ export const Container = styled.div`
   background-color: ${(props) => props.theme.colors.container};
   border-radius: 25px;
   padding: 0 1rem;
+  position: relative;
 `;
 
 export const Input = styled.input`
@@ -27,7 +28,7 @@ export const Input = styled.input`
 export const ButtonSearch = styled.button`
   background-color: ${(props) => props.theme.colors.primary};
   width: 15%;
-  right: 40px;
+  right: 0;
   height: 3rem;
   position: absolute;
   border-top-left-radius: 0;
