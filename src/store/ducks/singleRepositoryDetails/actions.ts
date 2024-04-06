@@ -10,12 +10,3 @@ export const loadSingleRepositorySuccess = (data: SingleRepositoryDetails) =>
 
 export const loadSingleRepositoryFailure = () =>
   action(SingleRepositoryDetailsTypes.LOAD_FAILURE);
-
-
-
-  
-// export const loadRequest = (repoName: string, repoUser: string) => action(SingleRepositoryDetailsTypes.LOAD_REQUEST, { repoName, repoUser });
-
-// export const loadSuccess = (data: SingleRepositoryDetails) => action(SingleRepositoryDetailsTypes.LOAD_SUCCESS, { data });
-
-// export const loadFailure = () => action(SingleRepositoryDetailsTypes.LOAD_FAILURE);

@@ -10,10 +10,6 @@ import { SearchBar } from '../components/SearchBar';
 import TextIntro from '../components/TextTitle'; 
 import { loadSingleRepositoryRequest } from '../store/ducks/singleRepositoryDetails/actions';
 
-// interface HomePageProps {
-//   children: ReactNode;
-// }
-
 interface StateProps {
   repositories: Repository[]
   singleRepositoryDetails: SingleRepositoryDetails
@@ -43,12 +39,12 @@ const HomePage: React.FC<Props> = (props) => {
   };
 
   const handleLoadSingleRepository = () => {
-    loadSingleRepository('react', 'facebook'); // Substitua 'repoName' e 'repoUser' pelos valores que deseja testar
+    loadSingleRepository('react', 'facebook');
   };
 
   useEffect(() => {
-    console.log('repositories XXX', repositories);
-    console.log('singleRepositoryDetails', singleRepositoryDetails)
+    // console.log('repositories XXX', repositories);
+    // console.log('singleRepositoryDetails', singleRepositoryDetails)
   }, [repositories, singleRepositoryDetails]);
 
   return (
