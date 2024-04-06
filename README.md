@@ -1,27 +1,18 @@
-Reactme
-Este projeto foi desenvolvido por Emmanuel Stocco.
+# Tecnorise Challenge - Emmanuel 
 
-Instalação
-Para instalar as dependências, você pode usar o npm ou o yarn. Abra o terminal na pasta do projeto e execute o seguinte comando:
 
-bash
-Copy code
-npm install
-ou
+1. **Configurações básicas:**
+Para iniciar o projeto corretamente, lembrese de criar um aquivo .env na raiz e colocar um token de API do Github. O git exige o token para permitir o uso da GraphQL API. Você pode utilizar o .env copy como base.
 
-bash
-Copy code
-yarn install
-Executando localmente
-Para iniciar o projeto localmente, execute o seguinte comando:
+2. **Instalar dependencias:** 
+Utilize os seguintes comandos para instalar as dependencias na sua maquina:
+```bash
+$ npm install
+```
+ou 
+```bash
+$ yarn
+```
 
-bash
-Copy code
-npm start
-
-bash
-Copy code
-yarn start
-ou
-
-Isso iniciará o servidor de desenvolvimento e abrirá a aplicação no seu navegador padrão. Se isso não acontecer automaticamente, você pode acessar http://localhost:3000 no seu navegador.
+3. **Documentação da API:**
+O servidor por padrão vai iniciar na porta 3000. Agora você já consegue utilizar aplicação, basta inserir um nome de repositório e clicar em enter que a listagem será exibida. Clicando em qualquer item da tabéla você encontra os dados especificos do repositório.
