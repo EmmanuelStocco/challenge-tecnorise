@@ -4,7 +4,8 @@ import { resetSingleRepositoryDetails } from '../../store/ducks/singleRepository
 import {
     ModalCloseButton,
     ModalContainer,
-    ModalContent
+    ModalContent,
+    ModalDescription
 } from './style';
 import { type SingleRepositoryDetails } from '../../store/ducks/singleRepositoryDetails/types';
 import { FaEye, FaStar, FaCodeBranch, FaCode, FaUser, FaExclamationTriangle, FaBook, FaGit } from 'react-icons/fa';
@@ -19,14 +20,28 @@ const Modal: React.FC<ModalProps> = ({ data }) => {
     const handleClose = () => {
         dispatch(resetSingleRepositoryDetails());
     };
+
+    const dateFormatter = (data: string) => {
+        const regex = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z$/;
+        const match = data.match(regex);
+        
+        if (match) {
+          const [, ano, mes, dia] = match;
+          return `${dia}/${mes}/${ano}`;
+        }
+      
+        return data;
+      }; 
+
+      
+
     return (
-        <ModalContainer>
-            
+        <ModalContainer> 
             <ModalContent> 
                 <ModalCloseButton onClick={handleClose}>X</ModalCloseButton> 
                 
                 <h1> {data.name}</h1> 
-                <p>{data.description}</p>
+                <ModalDescription>{data.description}</ModalDescription>
 
                 <div>
                     <p><FaEye style={{ color: 'blueviolet' }}/> Seguidores: {data.watchers.totalCount}</p>
@@ -37,7 +52,7 @@ const Modal: React.FC<ModalProps> = ({ data }) => {
                     <p><FaUser style={{ color: 'maroon' }}/> Proprietário: {data.owner.login} </p>  
                     <p><FaGit style={{ color: 'black' }}/> Commits totais: {data.defaultBranchRef.target.history.totalCount} </p>  
                     <p>
-                    <FaBook /> Linguagens utilizadas: {data.languages.nodes.map((e) => e.name).join(', ')}
+                    <FaBook /> Última atualização: {dateFormatter(data.updatedAt)}
                     </p> 
                 </div>
                     

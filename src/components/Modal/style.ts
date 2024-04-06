@@ -12,6 +12,16 @@ export const ModalContainer = styled.div`
   align-items: center;
 `;
 
+export const ModalDescription = styled.p`
+  width: 60%;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    width: 100%; 
+  }
+`;
+
 export const ModalContent = styled.div`
   background-color: ${(props) => props.theme.colors.container};
   padding: 1rem;
@@ -29,20 +39,31 @@ export const ModalContent = styled.div`
     margin-right: auto;
   }
 
-  div { 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
-    column-gap: 15rem; 
-    row-gap: 0.1rem; 
-    font-size: 1.5rem;
-
-    p {
-      display: flex;
-      align-items: center;       
-      gap: 0.5rem;
-    }
+  div {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  /* align-items: center; */
+  justify-content: center;
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    font-size: 1.0rem;
   }
+
+
+  p {
+    display: flex;
+    align-items: center;       
+    gap: 0.5rem; 
+    justify-content: start;  
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 `;
 
 export const ModalCloseButton = styled.button`
