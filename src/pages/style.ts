@@ -11,5 +11,6 @@ export const Container = styled.div`
   color: white;
   
   @media screen and (max-width: 768px) {  
+    
   }
 `;

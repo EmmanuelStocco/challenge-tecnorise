@@ -11,6 +11,7 @@ import { SearchBar } from '../components/SearchBar';
 import TextIntro from '../components/TextTitle'; 
 import { RepositoryTable } from '../components/RepositoryTable';
 import Modal from '../components/Modal';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 interface StateProps {
   repositories: Repository[]
@@ -24,6 +25,8 @@ interface DispatchProps {
 
 interface OwnProps {
   // children: ReactNode;
+  darkThemeCurrent: boolean;
+  toggleTheme: () => void;
 };
 
 type Props = StateProps & DispatchProps & OwnProps;
@@ -51,6 +54,12 @@ const HomePage: React.FC<Props> = (props) => {
 
   return (
     <Container>
+      <DarkModeSwitch
+      style={{  right: '2rem' }}
+      checked={props.darkThemeCurrent}
+      onChange={props.toggleTheme}
+      size={100}
+    />
       <TextIntro title='Pesquise o repositório'/>
       <SearchBar handleSearch={handleSearch} />   
        

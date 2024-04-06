@@ -13,7 +13,8 @@ export const Container = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
   @media screen and (max-width: 768px) {
     width: 90%;
-    max-width: 20rem;
+    max-width: 20rem;    
+    
   }
 `;
 

@@ -19,13 +19,15 @@ function App() {
     <Provider store={store}>
     <ThemeProvider theme={theme}>  
       {/* <ToggleButton onClick={toggleTheme}>Toggle Theme</ToggleButton>   */}
-      <DarkModeSwitch
-      style={{  position: 'absolute', right: '2rem' }}
-      checked={darkThemeCurrent}
+      {/* <DarkModeSwitch
+      style={{  right: '2rem' }} 
       onChange={toggleTheme}
       size={100}
-    />
-       <HomePage />
+    /> */}
+       <HomePage 
+       darkThemeCurrent={darkThemeCurrent} 
+      toggleTheme={toggleTheme}
+       />
     </ThemeProvider>
     </Provider>
   );
