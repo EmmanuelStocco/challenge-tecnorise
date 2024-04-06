@@ -19,9 +19,7 @@ export function RepositoryTable  ({ repositories }: TableProps) {
   const dispatch = useDispatch();
   const handleRowClick = (repoName: string, repoUser: string) => { 
     dispatch(loadSingleRepositoryRequest(repoName, repoUser));
-  };
-
-  console.log('repositories', repositories)
+  }; 
   return (
     <TableContainer>
       <TableHead>

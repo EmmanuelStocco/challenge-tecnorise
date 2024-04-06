@@ -44,10 +44,10 @@ const HomePage: React.FC<Props> = (props) => {
   //   loadSingleRepository('react', 'facebook');
   // };
 
-  useEffect(() => {
-    // console.log('repositories XXX', repositories);
-    console.log('singleRepositoryDetails', singleRepositoryDetails)
-  }, [repositories, singleRepositoryDetails]);
+  // useEffect(() => {
+  //   // console.log('repositories XXX', repositories);
+  //   console.log('singleRepositoryDetails', singleRepositoryDetails)
+  // }, [repositories, singleRepositoryDetails]);
  
 
   return (
