@@ -36,7 +36,7 @@ export function RepositoryTable  ({ repositories }: TableProps) {
             key={repo.node.id}
             onClick={() => handleRowClick(repo.node.name, repo.node.owner.login)}
             >
-            <TableBodyCell>{repo.node.name}</TableBodyCell>
+              <TableBodyCell>{repo.node.name}</TableBodyCell>
               <TableBodyCell>{repo.node.description}</TableBodyCell>
               <TableBodyCell>{repo.node.owner.login}</TableBodyCell>
             </TableBodyRow>

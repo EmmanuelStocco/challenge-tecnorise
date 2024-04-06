@@ -10,7 +10,7 @@ export const TableContainer = styled.table`
   border-radius: 15px;
   padding: 8px;
   @media screen and (max-width: 768px) {
-    width: 30%; 
+    width: 100%; 
   }
 `;
 
@@ -34,13 +34,15 @@ export const TableHeadCell = styled.th`
   padding: 4px 16px 4px;
   @media screen and (max-width: 768px) {
     font-size: 1rem;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
   }
  `;
 
 export const TableBody = styled.tbody`  
   background-color: ${(props) => lighten(0.05, props.theme.colors.container)};
-
+@media screen and (max-width: 768px) {
+    width: 1rem; 
+  }
 `;
 
 export const TableBodyRow = styled.tr`
@@ -48,7 +50,9 @@ export const TableBodyRow = styled.tr`
     cursor: pointer;
     background-color: ${(props) => props.theme.colors.secondary};
   }; 
-
+  @media screen and (max-width: 768px) {
+    width: 1rem; 
+  }
 `;
 
 export const TableBodyCell = styled.td`
@@ -59,9 +63,15 @@ export const TableBodyCell = styled.td`
    /* border-right: 1px solid ${(props) => props.theme.colors.text}; */
   /* border-left: 1px solid ${(props) => props.theme.colors.text}; */
   padding: 4px 16px 4px;
-
+  max-width: 500px;
+  overflow: hidden; /* Esconde o texto que transborda */
+  text-overflow: ellipsis; /* Adiciona reticências (...) ao texto que transborda */
+  white-space: nowrap; /* Impede a quebra de linha */
 
   @media screen and (max-width: 768px) {
-    font-size: 0.7rem;
+    font-size: 1rem;
+    padding: 2px 8px 2px;
+    max-width: 4rem;
+
   }
 `;
