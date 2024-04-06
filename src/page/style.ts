@@ -8,9 +8,5 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  
-  @media screen and (max-width: 768px) {  
-    
-  }
+  color: white; 
 `;

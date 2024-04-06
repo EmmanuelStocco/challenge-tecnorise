@@ -4,12 +4,10 @@ import styled from 'styled-components';
 export const TableContainer = styled.table`
   width: 60%;
   border-collapse: separate;
-  /* border-spacing: 0 1px;   */
   margin-top: 2rem;
   background-color: ${(props) => props.theme.colors.container};
   border-radius: 15px;
   padding: 8px;
-  
   margin-bottom: 1rem;
   @media screen and (max-width: 768px) {
     width: 100%; 
@@ -18,13 +16,9 @@ export const TableContainer = styled.table`
 
 export const TableHead = styled.thead`
   background-color: ${(props) => props.theme.colors.secondary};
-  /* border-radius: 15px; */
 `;
 
-export const TableHeadRow = styled.tr` 
- @media screen and (max-width: 768px) {
-    /* font-size: 3rem;  */
-  }
+export const TableHeadRow = styled.tr`
 `;
 
 export const TableHeadCell = styled.th` 
@@ -41,8 +35,8 @@ export const TableHeadCell = styled.th`
 
 export const TableBody = styled.tbody`  
   background-color: ${(props) => lighten(0.05, props.theme.colors.container)};
-@media screen and (max-width: 768px) {
-    width: 1rem; 
+  @media screen and (max-width: 768px) {
+      width: 1rem; 
   }
 `;
 

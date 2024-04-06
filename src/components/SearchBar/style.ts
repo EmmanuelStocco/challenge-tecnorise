@@ -13,8 +13,7 @@ export const Container = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
   @media screen and (max-width: 768px) {
     width: 90%;
-    max-width: 20rem;    
-    
+    max-width: 20rem;
   }
 `;
 
@@ -34,8 +33,7 @@ export const Input = styled.input`
     color: ${(props) => props.theme.colors.placeHolder};
     font-size: 1rem; 
   }
-`;
-
+`; 
 
 export const ButtonSearch = styled.button`
   background-color: ${(props) => props.theme.colors.primary};
@@ -67,9 +65,7 @@ export const ButtonSearch = styled.button`
    &:hover {
     background-color: ${(props) => darken(0.1, props.theme.colors.primary)};
   }
-`;
-
-
+`; 
 
 export const ButtonClear = styled.button`
   background-color: ${(props) => lighten(0.2, props.theme.colors.dark)};

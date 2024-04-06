@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components'; 
 import { lightTheme, darkTheme } from './styles/theme'; 
-import HomePage from './pages'; 
+import HomePage from './page'; 
 import store from './store'; 
 import Footer from './components/Footer';
 

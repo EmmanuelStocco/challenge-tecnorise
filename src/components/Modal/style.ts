@@ -26,7 +26,6 @@ export const ModalContent = styled.div`
   background-color: ${(props) => props.theme.colors.container};
   padding: 1rem;
   border-radius: 8px;
-  
   width:90%;
   height: 90%;
   display: flex;
@@ -52,7 +51,6 @@ export const ModalContent = styled.div`
     font-size: 1.0rem;
   }
 
-
   p {
     display: flex;
     align-items: center;       
@@ -63,7 +61,6 @@ export const ModalContent = styled.div`
     margin-right: auto;
   }
 }
-
 `;
 
 export const ModalCloseButton = styled.button`

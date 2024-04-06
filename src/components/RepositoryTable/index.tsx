@@ -15,7 +15,7 @@ interface TableProps {
     repositories: any[]
 }
 
-export function RepositoryTable  ({ repositories }: TableProps) {
+ function RepositoryTable  ({ repositories }: TableProps) {
   const dispatch = useDispatch();
   const handleRowClick = (repoName: string, repoUser: string) => { 
     dispatch(loadSingleRepositoryRequest(repoName, repoUser));
@@ -45,3 +45,5 @@ export function RepositoryTable  ({ repositories }: TableProps) {
   </TableContainer>
   );
 };
+
+export default RepositoryTable;

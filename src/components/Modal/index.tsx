@@ -7,7 +7,7 @@ import {
     ModalContent,
     ModalDescription
 } from './style';
-import { type SingleRepositoryDetails } from '../../store/ducks/singleRepositoryDetails/types';
+import { SingleRepositoryDetails } from '../../store/ducks/singleRepositoryDetails/types';
 import { FaEye, FaStar, FaCodeBranch, FaCode, FaUser, FaExclamationTriangle, FaBook, FaGit } from 'react-icons/fa';
 
 interface ModalProps {
@@ -20,42 +20,43 @@ const Modal: React.FC<ModalProps> = ({ data }) => {
         dispatch(resetSingleRepositoryDetails());
     };
 
-    const dateFormatter = (data: string) => {
+    const dateFormatter = (date: string) => {
         const regex = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z$/;
-        const match = data.match(regex);
+        const match = date.match(regex);
         
         if (match) {
           const [, ano, mes, dia] = match;
           return `${dia}/${mes}/${ano}`;
         }
       
-        return data;
-    }; 
+        return date;
+    };  
 
-      
+    const renderInfo = (label: string, value: string | number, icon: JSX.Element, color: string) => (
+        <p key={label}>
+            {icon && React.cloneElement(icon, { size: 24, style: { color } })}
+            {label}: {value}
+        </p>
+    );
 
     return (
         <ModalContainer> 
             <ModalContent> 
                 <ModalCloseButton onClick={handleClose}>X</ModalCloseButton> 
                 
-                <h1> {data.name}</h1> 
+                <h1>{data.name}</h1> 
                 <ModalDescription>{data.description}</ModalDescription>
 
                 <div>
-                    <p><FaEye size={24} style={{ color: 'blueviolet' }}/> Seguidores: {data.watchers.totalCount}</p>
-                    <p><FaExclamationTriangle size={24} style={{ color: 'darkorange' }}/>Issues: {data.issues.totalCount}</p>
-                    <p><FaStar size={24} style={{ color: 'yellow' }}/> Estrelas: {data.stargazerCount}</p>
-                    <p><FaCodeBranch size={24} style={{ color: 'orange' }} />Forks: {data.forks.totalCount}</p>
-                    <p><FaCode size={24} style={{ color: 'black' }}/> Pull Request: {data.pullRequests.totalCount}</p>
-                    <p><FaUser size={24} style={{ color: 'maroon' }}/> Proprietário: {data.owner.login} </p>  
-                    <p><FaGit size={24} style={{ color: 'black' }}/> Commits totais: {data.defaultBranchRef.target.history.totalCount} </p>  
-                    <p>
-                    <FaBook size={24} /> Última Att: {dateFormatter(data.updatedAt)}
-                    </p> 
+                    {renderInfo('Seguidores', data.watchers.totalCount, <FaEye />, 'blueviolet')}
+                    {renderInfo('Issues', data.issues.totalCount, <FaExclamationTriangle />, 'darkorange')}
+                    {renderInfo('Estrelas', data.stargazerCount, <FaStar />, 'yellow')}
+                    {renderInfo('Forks', data.forks.totalCount, <FaCodeBranch />, 'orange')}
+                    {renderInfo('Pull Request', data.pullRequests.totalCount, <FaCode />, 'black')}
+                    {renderInfo('Proprietário', data.owner.login, <FaUser />, 'maroon')}
+                    {renderInfo('Commits totais', data.defaultBranchRef.target.history.totalCount, <FaGit />, 'black')}
+                    {renderInfo('Última Att', dateFormatter(data.updatedAt), <FaBook />, 'black')}
                 </div>
-                    
-                    
             </ModalContent>
         </ModalContainer>
     );

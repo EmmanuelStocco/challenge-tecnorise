@@ -12,7 +12,7 @@ interface SearchBarProps {
   handleSearch: (searchTerm: string) => void;
 }
 
-export const SearchBar: React.FC<SearchBarProps> = ({ handleSearch }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ handleSearch }) => {
   const [repoName, setRepoName] = useState<string>("")
   const dispatch = useDispatch(); 
 
@@ -58,3 +58,5 @@ export const SearchBar: React.FC<SearchBarProps> = ({ handleSearch }) => {
     </>
   );
 };
+
+export default SearchBar;

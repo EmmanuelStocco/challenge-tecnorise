@@ -7,26 +7,26 @@ import { SingleRepositoryDetails } from '../store/ducks/singleRepositoryDetails/
 import { loadSingleRepositoryRequest } from '../store/ducks/singleRepositoryDetails/actions';
 import * as RepositoriesActions from '../store/ducks/repositories/actions';
 import { Container } from './style';
-import { SearchBar } from '../components/SearchBar'; 
+import SearchBar  from '../components/SearchBar'; 
 import TextIntro from '../components/TextTitle'; 
-import { RepositoryTable } from '../components/RepositoryTable';
+import RepositoryTable from '../components/RepositoryTable';
 import Modal from '../components/Modal';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 interface StateProps {
   repositories: Repository[]
   singleRepositoryDetails: {repository: SingleRepositoryDetails}
-};
+}
 
 interface DispatchProps {
   loadRequest(searchTerm: string): void;
   loadSingleRepository(repoName: string, repoUser: string): void;
-};
+}
 
 interface OwnProps { 
   darkThemeCurrent: boolean;
   toggleTheme: () => void;
-};
+}
 
 type Props = StateProps & DispatchProps & OwnProps;
 
@@ -37,8 +37,7 @@ const HomePage: React.FC<Props> = (props) => {
     loadRequest
   } = props;
 
-  const handleSearch = (searchTerm: string) => { 
-    console.log('search', searchTerm)
+  const handleSearch = (searchTerm: string) => {
     loadRequest(searchTerm);
   }; 
 

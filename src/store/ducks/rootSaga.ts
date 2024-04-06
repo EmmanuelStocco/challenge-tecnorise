@@ -10,13 +10,13 @@ import { loadSingleRepositoryDetails } from './singleRepositoryDetails/sagas';
 import { loadSingleRepositoryRequest } from './singleRepositoryDetails/actions';
 
 
- interface LoadRequestAction extends ActionType<typeof loadRequest> {
+interface LoadRequestAction extends ActionType<typeof loadRequest> {
     payload: {
         searchTerm: string;
     };
 }
 
- interface LoadSingleRepositoryRequestAction extends ActionType<typeof loadSingleRepositoryRequest> {
+interface LoadSingleRepositoryRequestAction extends ActionType<typeof loadSingleRepositoryRequest> {
     payload: {
         repoName: string;
         repoUser: string;
