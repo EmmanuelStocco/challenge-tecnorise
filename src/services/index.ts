@@ -30,7 +30,7 @@ export async function searchForTermOnAPI(searchTerm: string) {
 };
 
 
-export async function getRepositoryDetailsById(repoName: string, repoUser: string) { 
+export async function searchSingleRepositoryDetailsById(repoName: string, repoUser: string) { 
      const query = `{
       repository(name: "${repoName}", owner: "${repoUser}") {
         name
