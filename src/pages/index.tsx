@@ -13,16 +13,16 @@ import TextIntro from '../components/TextTitle';
 interface StateProps {
   repositories: Repository[]
   singleRepositoryDetails: SingleRepositoryDetails
-}
+};
 
 interface DispatchProps {
   loadRequest(searchTerm: string): void;
   loadSingleRepository(repoName: string, repoUser: string): void;
-}
+};
 
 interface OwnProps {
   children: ReactNode;
-}
+};
 
 type Props = StateProps & DispatchProps & OwnProps;
 
