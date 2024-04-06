@@ -9,6 +9,7 @@ import * as RepositoriesActions from '../store/ducks/repositories/actions';
 import { Container } from './style';
 import { SearchBar } from '../components/SearchBar'; 
 import TextIntro from '../components/TextTitle'; 
+import { RepositoryTable } from '../components/RepositoryTable';
 
 interface StateProps {
   repositories: Repository[]
@@ -38,21 +39,21 @@ const HomePage: React.FC<Props> = (props) => {
     loadRequest(searchTerm);
   };
 
-  const handleLoadSingleRepository = () => {
-    loadSingleRepository('react', 'facebook');
-  };
+  // const handleLoadSingleRepository = () => {
+  //   loadSingleRepository('react', 'facebook');
+  // };
 
-  useEffect(() => {
-    // console.log('repositories XXX', repositories);
-    // console.log('singleRepositoryDetails', singleRepositoryDetails)
-  }, [repositories, singleRepositoryDetails]);
+  // useEffect(() => {
+  //   // console.log('repositories XXX', repositories);
+  //   // console.log('singleRepositoryDetails', singleRepositoryDetails)
+  // }, [repositories, singleRepositoryDetails]);
 
   return (
     <Container>
       <TextIntro title='Pesquise o repositório'/>
       <SearchBar handleSearch={handleSearch} />   
-      <button onClick={handleLoadSingleRepository}>Load Single Repository</button>   
-
+      {/* <button onClick={handleLoadSingleRepository}>Load Single Repository</button>    */}
+      <RepositoryTable  repositories={repositories} />
     </Container>
   );
 };
