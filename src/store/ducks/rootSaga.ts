@@ -3,18 +3,28 @@ import { ActionType } from 'typesafe-actions';
 
 import { RepositoriesTypes } from './repositories/types'
 import { load } from './repositories/sagas'
-import { loadRequest } from './repositories/actions'; // Importe a action LOAD_REQUEST
+import { loadRequest } from './repositories/actions';
 
-// Crie uma interface para representar a action LOAD_REQUEST
-interface LoadRequestAction extends ActionType<typeof loadRequest> {
+import { SingleRepositoryDetailsTypes } from './singleRepositoryDetails/types'
+import { loadSingleRepositoryDetails } from './singleRepositoryDetails/sagas'
+import { loadSingleRepositoryRequest } from './singleRepositoryDetails/actions'
+
+ interface LoadRequestAction extends ActionType<typeof loadRequest> {
     payload: {
         searchTerm: string;
     };
 }
 
-// Use a ActionType para inferir o tipo correto da action
+ interface LoadSingleRepositoryRequestAction extends ActionType<typeof loadSingleRepositoryRequest> {
+    payload: {
+        repoName: string;
+        repoUser: string;
+    };
+} 
+
 export default function* rootSaga(): Generator {
     return yield all([
         takeLatest<LoadRequestAction>(RepositoriesTypes.LOAD_REQUEST, (action) => load(action.payload.searchTerm)),
+        takeLatest<LoadSingleRepositoryRequestAction>(SingleRepositoryDetailsTypes.LOAD_REQUEST, (action) => loadSingleRepositoryDetails(action.payload.repoName, action.payload.repoUser)),
     ]);
 }
