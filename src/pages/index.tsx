@@ -5,6 +5,8 @@ import { ApplicationState } from '../store';
 import { Repository } from '../store/ducks/repositories/types';
 import { bindActionCreators, Dispatch } from 'redux';
 import * as RepositoriesActions from '../store/ducks/repositories/actions';
+import { SearchBar } from '../components/SearchBar'; 
+import TextIntro from '../components/TextTitle'; 
 
 interface HomePageProps {
   children: ReactNode;
@@ -15,28 +17,33 @@ interface StateProps {
 }
 
 interface DispatchProps {
-  loadRequest() : void
+  loadRequest(searchTerm: string): void;
 }
 
 interface OwnProps {
   children: ReactNode;
 }
 
-type Props = StateProps & DispatchProps & OwnProps
+type Props = StateProps & DispatchProps & OwnProps;
 
 const HomePage: React.FC<Props> = (props) => {
-  // useEffect(() => {
-  //   const {loadRequest} = props;
-  //   loadRequest()
-  //   console.log('repositories TESTE AGRESSIVO', props.repositories.map(repository => repository.name))
+  const { loadRequest, repositories } = props;
 
-  // }, []);
+  const handleSearch = (searchTerm: string) => { 
+    loadRequest(searchTerm);
+  };
+
+  useEffect(() => {
+    console.log('repositories XXX', repositories);
+  }, [repositories]);
+
   return (
     <Container>
-      {props.children}
+      <TextIntro title='Pesquise o repositório'/>
+      <SearchBar handleSearch={handleSearch} />   
     </Container>
   );
-}; 
+};
 
 const mapStateToProps = (state: ApplicationState) => ({
   repositories: state.repositories.data
@@ -44,7 +51,5 @@ const mapStateToProps = (state: ApplicationState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(RepositoriesActions, dispatch);
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

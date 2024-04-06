@@ -5,6 +5,6 @@ import { load } from './repositories/sagas'
 
 export default function* rootSaga(): Generator {
     return yield all([
-        takeLatest(RepositoriesTypes.LOAD_REQUEST, load),
+        takeLatest(RepositoriesTypes.LOAD_REQUEST, (action) => load(String(action))),
     ]);
 }

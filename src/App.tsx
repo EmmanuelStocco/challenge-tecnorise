@@ -14,19 +14,12 @@ function App() {
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === lightTheme ? darkTheme : lightTheme)); 
-  };     
-
-  const handleSearch = (searchTerm: string) => { 
-    searchForTermOnAPI(searchTerm)  
-    // getRepositoryDetailsById('react', 'facebook')
-  };
+  };   
   return (
     <Provider store={store}>
     <ThemeProvider theme={theme}>  
        <HomePage>
-        <ToggleButton onClick={toggleTheme}>Toggle Theme</ToggleButton> 
-        <TextIntro title='Pesquise o repositório'/>
-        <SearchBar handleSearch={handleSearch} />   
+        <ToggleButton onClick={toggleTheme}>Toggle Theme</ToggleButton>  
        </HomePage>
     </ThemeProvider>
     </Provider>
