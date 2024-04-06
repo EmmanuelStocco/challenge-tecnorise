@@ -16,8 +16,7 @@ export async function searchForTermOnAPI(searchTerm: string) {
         }
       }
     }
-  `;
-
+    `; 
     const res = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
@@ -26,9 +25,9 @@ export async function searchForTermOnAPI(searchTerm: string) {
       },
       body: JSON.stringify({ query})
     }); 
-    const { data } = await res.json(); 
-    console.log('Data:', data.search.edges); 
-  }
+    const { data } = await res.json();  
+    return data.search.edges;
+};
 
 
 export async function getRepositoryDetailsById(repoName: string, repoUser: string) { 

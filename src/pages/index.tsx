@@ -25,12 +25,12 @@ interface OwnProps {
 type Props = StateProps & DispatchProps & OwnProps
 
 const HomePage: React.FC<Props> = (props) => {
-  useEffect(() => {
-    const {loadRequest} = props;
-    loadRequest()
-  }, [])
-  
-  console.log('repositories TESTE AGRESSIVO', props.repositories.map(repository => repository.name))
+  // useEffect(() => {
+  //   const {loadRequest} = props;
+  //   loadRequest()
+  //   console.log('repositories TESTE AGRESSIVO', props.repositories.map(repository => repository.name))
+
+  // }, []);
   return (
     <Container>
       {props.children}
