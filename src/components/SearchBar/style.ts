@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { darken } from 'polished';
+import { darken, lighten } from 'polished';
 
 export const Container = styled.div`
   display: flex;
@@ -66,5 +66,33 @@ export const ButtonSearch = styled.button`
 
    &:hover {
     background-color: ${(props) => darken(0.1, props.theme.colors.primary)};
+  }
+`;
+
+
+
+export const ButtonClear = styled.button`
+  background-color: ${(props) => lighten(0.2, props.theme.colors.dark)};
+  width: 8rem;
+  right: 0; 
+  border-radius: 60px; 
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5rem;
+  margin-top: 1rem;
+  @media screen and (max-width: 768px) { 
+    font-size: 0.5rem;
+  }
+
+  h1 {
+    align-items: center;
+    color:  ${(props) => props.theme.colors.text};
+  }
+
+   &:hover {
+    background-color: ${(props) => darken(0.02, props.theme.colors.dark)};
   }
 `;

@@ -38,6 +38,7 @@ const HomePage: React.FC<Props> = (props) => {
   } = props;
 
   const handleSearch = (searchTerm: string) => { 
+    console.log('search', searchTerm)
     loadRequest(searchTerm);
   }; 
 
