@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const TableContainer = styled.table`
   width: 60%;
   border-collapse: separate;
-  border-spacing: 0 1px; /* Espaçamento entre as linhas */
+  border-spacing: 0 1px;  
   margin-top: 2rem;
   background-color: ${(props) => props.theme.colors.container};
   border-radius: 15px;
@@ -22,7 +22,7 @@ export const TableHeadCell = styled.th`
   text-align: center;
   font-size: 1.5rem;
   border-bottom: 0.5px solid ${(props) => props.theme.colors.text};
-  border-right: 0.5px solid ${(props) => props.theme.colors.text}; /* Linha entre as colunas */
+  border-right: 0.5px solid ${(props) => props.theme.colors.text};  
   border-radius: 15px;
 
  `;
@@ -46,5 +46,5 @@ export const TableBodyCell = styled.td`
   font-size: 1.2rem;
   text-align: center;
   border-bottom: 1px solid ${(props) => props.theme.colors.text};
-  border-right: 1px solid ${(props) => props.theme.colors.text}; /* Linha entre as colunas */
+  border-right: 1px solid ${(props) => props.theme.colors.text};
 `;
