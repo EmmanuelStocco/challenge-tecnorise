@@ -6,13 +6,16 @@ export const TableContainer = styled.table`
   border-spacing: 0 1px; /* Espaçamento entre as linhas */
   margin-top: 2rem;
   background-color: ${(props) => props.theme.colors.container};
+  border-radius: 15px;
 `;
 
 export const TableHead = styled.thead`
   background-color: ${(props) => props.theme.colors.dark};
+  border-radius: 15px;
 `;
 
-export const TableHeadRow = styled.tr``;
+export const TableHeadRow = styled.tr`  
+`;
 
 export const TableHeadCell = styled.th`
   padding: 8px;
@@ -20,15 +23,22 @@ export const TableHeadCell = styled.th`
   font-size: 1.5rem;
   border-bottom: 0.5px solid ${(props) => props.theme.colors.text};
   border-right: 0.5px solid ${(props) => props.theme.colors.text}; /* Linha entre as colunas */
-`;
+  border-radius: 15px;
 
-export const TableBody = styled.tbody``;
+ `;
+
+export const TableBody = styled.tbody` 
+  border-radius: 15px;
+
+`;
 
 export const TableBodyRow = styled.tr`
   &:hover {
     cursor: pointer;
     background-color: ${(props) => props.theme.colors.secondary};
-  }
+  };
+  border-radius: 15px;
+
 `;
 
 export const TableBodyCell = styled.td`
