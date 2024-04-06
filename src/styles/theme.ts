@@ -13,6 +13,7 @@ export const lightTheme = {
       info: '#17a2b8',
       light: '#f8f9fa',
       dark: '#343a40',
+      placeHolder: '#FFFFFFF8'
     }, 
   };
   
@@ -31,6 +32,7 @@ export const lightTheme = {
       info: '#007bff',
       light: '#f8f9fa',
       dark: '#343a40',
+      placeHolder: '#FFFFFFF8'
     }, 
   };
   

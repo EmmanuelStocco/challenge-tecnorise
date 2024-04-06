@@ -25,14 +25,16 @@ export const SearchBar: React.FC<SearchBarProps> = ({ handleSearch }) => {
 
   return (
     <Container>
-      <FiSearch /> 
+      <FiSearch style={{ color: '#FFFFFFF8' }} />
       <Input 
         type="text"
         placeholder="Pesquise por repositórios..." 
         onChange={handleRepoName}
         onKeyDown={handleKeyDown}  
       />
-      <ButtonSearch onClick={runHandleSearchOn}></ButtonSearch>
+      <ButtonSearch onClick={runHandleSearchOn}>
+        <h1> Buscar </h1>
+      </ButtonSearch>
     </Container>
   );
 };

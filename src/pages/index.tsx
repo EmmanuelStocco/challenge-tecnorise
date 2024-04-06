@@ -53,8 +53,7 @@ const HomePage: React.FC<Props> = (props) => {
     <Container>
       <TextIntro title='Pesquise o repositório'/>
       <SearchBar handleSearch={handleSearch} />   
-      {/* <button onClick={handleLoadSingleRepository}>Load Single Repository</button>    */}
-      
+       
       {
         repositories.length > 0 && <RepositoryTable  repositories={repositories} />
       } 

@@ -12,7 +12,7 @@ export const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 90%;
-    max-width: 35rem;
+    max-width: 20rem;
   }
 `;
 
@@ -25,7 +25,8 @@ export const Input = styled.input`
   margin-left: 1rem;
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.placeHolder};
+    font-size: 1rem; 
   }
 `;
 
@@ -42,4 +43,18 @@ export const ButtonSearch = styled.button`
   border-bottom-right-radius: 20px;
   border: none;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5rem;
+
+  @media screen and (max-width: 768px) {
+    width: 25%;
+    font-size: 0.5rem;
+  }
+
+  h1 {
+    align-items: center;
+    color:  ${(props) => props.theme.colors.text};
+  }
 `;
