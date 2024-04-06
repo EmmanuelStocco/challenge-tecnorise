@@ -1,11 +1,45 @@
 import { Reducer } from "redux";
 import { SingleRepositoryDetailsState, SingleRepositoryDetailsTypes } from "./types";
 
-const INITIAL_STATE: SingleRepositoryDetailsState  = {
-    data: [{test: 'emmanuel'}],
+const INITIAL_STATE: SingleRepositoryDetailsState = {
+    data: {
+      name: "",
+      description: "",
+      owner: {
+        login: ""
+      },
+      createdAt: "",
+      updatedAt: "",
+      stargazerCount: 0,
+      watchers: {
+        totalCount: 0
+      },
+      forks: {
+        totalCount: 0
+      },
+      languages: {
+        nodes: [{
+          name: ""
+        }]
+      },
+      issues: {
+        totalCount: 0
+      },
+      pullRequests: {
+        totalCount: 0
+      },
+      defaultBranchRef: {
+        target: {
+          history: {
+            totalCount: 0
+          }
+        }
+      }
+    },
     error: false,
     loading: false
-}
+  };
+  
 
 const reducer: Reducer<SingleRepositoryDetailsState> = (state = INITIAL_STATE, action: any) => {
     switch (action.type) {

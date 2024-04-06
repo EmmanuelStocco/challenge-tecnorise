@@ -3,6 +3,7 @@ import { Container } from './style';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import { Repository } from '../store/ducks/repositories/types';
+import { SingleRepositoryDetails } from '../store/ducks/singleRepositoryDetails/types'
 import { bindActionCreators, Dispatch } from 'redux';
 import * as RepositoriesActions from '../store/ducks/repositories/actions';
 import { SearchBar } from '../components/SearchBar'; 
@@ -14,6 +15,7 @@ interface HomePageProps {
 
 interface StateProps {
   repositories: Repository[]
+  singleRepositoryDetails: SingleRepositoryDetails
 }
 
 interface DispatchProps {
@@ -27,7 +29,7 @@ interface OwnProps {
 type Props = StateProps & DispatchProps & OwnProps;
 
 const HomePage: React.FC<Props> = (props) => {
-  const { loadRequest, repositories } = props;
+  const { loadRequest, repositories, singleRepositoryDetails } = props;
 
   const handleSearch = (searchTerm: string) => { 
     loadRequest(searchTerm);
@@ -35,6 +37,7 @@ const HomePage: React.FC<Props> = (props) => {
 
   useEffect(() => {
     console.log('repositories XXX', repositories);
+    console.log('singleRepositoryDetails', singleRepositoryDetails)
   }, [repositories]);
 
   return (
@@ -46,7 +49,8 @@ const HomePage: React.FC<Props> = (props) => {
 };
 
 const mapStateToProps = (state: ApplicationState) => ({
-  repositories: state.repositories.data
+  repositories: state.repositories.data,
+  singleRepositoryDetails: state.singleRepositoryDetails.data
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
