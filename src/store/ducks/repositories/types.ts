@@ -5,8 +5,12 @@ export  enum RepositoriesTypes {
 };
 
 export interface Repository {
-    id: number
-    name: string
+    id: string;
+    name: string;
+    description: string;
+    owner: {
+        login: string;
+    };
 }
 
 export interface RepositoriesState {

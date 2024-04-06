@@ -81,4 +81,4 @@ export async function getRepositoryDetailsById(repoName: string, repoUser: strin
 
       const data = await res.json();
       console.log('Data:', data); 
-  }
+};
