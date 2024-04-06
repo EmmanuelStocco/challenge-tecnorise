@@ -20,7 +20,7 @@ function App() {
     <ThemeProvider theme={theme}>  
       {/* <ToggleButton onClick={toggleTheme}>Toggle Theme</ToggleButton>   */}
       <DarkModeSwitch
-      style={{  position: 'absolute', right:0, padding: 8}}
+      style={{  position: 'absolute', right: '2rem' }}
       checked={darkThemeCurrent}
       onChange={toggleTheme}
       size={100}
