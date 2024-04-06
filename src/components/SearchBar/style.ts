@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Container = styled.div`
   display: flex;
@@ -23,7 +24,11 @@ export const Input = styled.input`
   background: transparent;
   color: ${(props) => props.theme.colors.text};
   margin-left: 1rem;
-
+  font-size: 1.4rem;
+  @media screen and (max-width: 768px) {
+    width: 25%;
+    font-size: 1.1rem;
+  }
   &::placeholder {
     color: ${(props) => props.theme.colors.placeHolder};
     font-size: 1rem; 
@@ -56,5 +61,9 @@ export const ButtonSearch = styled.button`
   h1 {
     align-items: center;
     color:  ${(props) => props.theme.colors.text};
+  }
+
+   &:hover {
+    background-color: ${(props) => darken(0.1, props.theme.colors.primary)};
   }
 `;
