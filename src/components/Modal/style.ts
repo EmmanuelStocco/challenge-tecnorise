@@ -19,6 +19,25 @@ export const ModalContent = styled.div`
   
   width:90%;
   height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  div { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 2rem; */
+    column-gap: 15rem; /* Espaçamento horizontal entre as colunas */
+    row-gap: 0.1rem; /* Espaçamento vertical entre as linhas */
+    p {
+      display: flex;
+      align-items: center;
+      /* justify-content: center;  */
+      background-color: red;
+      gap: 0.5rem;
+    }
+  }
 `;
 
 export const ModalCloseButton = styled.button`
@@ -30,6 +49,5 @@ export const ModalCloseButton = styled.button`
   font-size: 1.2rem;
   color: ${(props) => props.theme.colors.text};
   cursor: pointer;
-
 `;
  
