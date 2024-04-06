@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/theme'; 
 import HomePage from './pages'; 
 import store from './store'; 
+import Footer from './components/Footer';
 
 
 function App() { 
@@ -18,9 +19,10 @@ function App() {
     <Provider store={store}>
     <ThemeProvider theme={theme}>   
        <HomePage 
-       darkThemeCurrent={darkThemeCurrent} 
-      toggleTheme={toggleTheme}
+        darkThemeCurrent={darkThemeCurrent} 
+        toggleTheme={toggleTheme}
        />
+       <Footer />
     </ThemeProvider>
     </Provider>
   );

@@ -9,8 +9,7 @@ export const ModalContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-left: 10px;
+  align-items: center; 
 `;
 
 export const ModalDescription = styled.p`

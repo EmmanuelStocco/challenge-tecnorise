@@ -9,6 +9,8 @@ export const TableContainer = styled.table`
   background-color: ${(props) => props.theme.colors.container};
   border-radius: 15px;
   padding: 8px;
+  
+  margin-bottom: 1rem;
   @media screen and (max-width: 768px) {
     width: 100%; 
   }
@@ -62,7 +64,6 @@ export const TableBodyCell = styled.td`
   overflow: hidden; 
   text-overflow: ellipsis; 
   white-space: nowrap; 
-
   @media screen and (max-width: 768px) {
     font-size: 1rem;
     padding: 2px 2px 2px;

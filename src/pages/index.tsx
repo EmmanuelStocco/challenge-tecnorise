@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
+import React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
@@ -23,8 +23,7 @@ interface DispatchProps {
   loadSingleRepository(repoName: string, repoUser: string): void;
 };
 
-interface OwnProps {
-  // children: ReactNode;
+interface OwnProps { 
   darkThemeCurrent: boolean;
   toggleTheme: () => void;
 };
@@ -40,22 +39,12 @@ const HomePage: React.FC<Props> = (props) => {
 
   const handleSearch = (searchTerm: string) => { 
     loadRequest(searchTerm);
-  };
-
-  // const handleLoadSingleRepository = () => {
-  //   loadSingleRepository('react', 'facebook');
-  // };
-
-  // useEffect(() => {
-  //   // console.log('repositories XXX', repositories);
-  //   console.log('singleRepositoryDetails', singleRepositoryDetails)
-  // }, [repositories, singleRepositoryDetails]);
-//  console.log('singleRepositoryDetails', singleRepositoryDetails)
+  }; 
 
   return (
     <Container>
       <DarkModeSwitch
-      style={{  right: '2rem' }}
+      style={{  marginTop: '1rem' }}
       checked={props.darkThemeCurrent}
       onChange={props.toggleTheme}
       size={100}
