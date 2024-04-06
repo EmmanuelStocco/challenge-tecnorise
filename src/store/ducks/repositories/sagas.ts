@@ -3,8 +3,7 @@ import { searchForTermOnAPI } from '../../../services';
 import { loadSuccess, loadFailure } from '../repositories/actions';
 
 export function* load(searchTerm: string) : Generator<any, void, any> {
-    try { 
-        console.log('searchTerm', searchTerm)
+    try {   
         const response = yield call(searchForTermOnAPI, searchTerm);
         yield put(loadSuccess(response))
     } catch (err) {
