@@ -14,13 +14,14 @@ interface TableProps {
 }
 
 export function RepositoryTable  ({ repositories }: TableProps) {
+  console.log('repositories', repositories)
   return (
     <TableContainer>
       <TableHead>
         <TableHeadRow>
-          <TableHeadCell>Nome</TableHeadCell>
+          <TableHeadCell>Nome do Repositório</TableHeadCell>
           <TableHeadCell>Descrição</TableHeadCell>
-          <TableHeadCell>Usuário</TableHeadCell>
+          <TableHeadCell>Proprietário</TableHeadCell>
         </TableHeadRow>
       </TableHead>
       <TableBody>

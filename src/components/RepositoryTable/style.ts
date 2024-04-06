@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 export const TableContainer = styled.table`
   width: 60%;
-  border-collapse: collapse;
+  border-collapse: collapse; 
+  margin-top: 2rem;
   background-color: ${(props) => props.theme.colors.container};
 `;
 

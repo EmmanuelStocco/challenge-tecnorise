@@ -22,7 +22,7 @@ interface DispatchProps {
 };
 
 interface OwnProps {
-  children: ReactNode;
+  // children: ReactNode;
 };
 
 type Props = StateProps & DispatchProps & OwnProps;
@@ -53,7 +53,10 @@ const HomePage: React.FC<Props> = (props) => {
       <TextIntro title='Pesquise o repositório'/>
       <SearchBar handleSearch={handleSearch} />   
       {/* <button onClick={handleLoadSingleRepository}>Load Single Repository</button>    */}
-      <RepositoryTable  repositories={repositories} />
+      
+      {
+        repositories.length > 0 && <RepositoryTable  repositories={repositories} />
+      } 
     </Container>
   );
 };

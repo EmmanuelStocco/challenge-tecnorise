@@ -16,9 +16,8 @@ function App() {
   return (
     <Provider store={store}>
     <ThemeProvider theme={theme}>  
-       <HomePage>
-        <ToggleButton onClick={toggleTheme}>Toggle Theme</ToggleButton>  
-       </HomePage>
+      <ToggleButton onClick={toggleTheme}>Toggle Theme</ToggleButton>  
+       <HomePage />
     </ThemeProvider>
     </Provider>
   );
