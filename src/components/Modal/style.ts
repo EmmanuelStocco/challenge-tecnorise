@@ -22,19 +22,24 @@ export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
+  h1 {
+    font-size: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   div { 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* gap: 2rem; */
-    column-gap: 15rem; /* Espaçamento horizontal entre as colunas */
-    row-gap: 0.1rem; /* Espaçamento vertical entre as linhas */
+    
+    column-gap: 15rem; 
+    row-gap: 0.1rem; 
+    font-size: 1.5rem;
+
     p {
       display: flex;
-      align-items: center;
-      /* justify-content: center;  */
-      background-color: red;
+      align-items: center;       
       gap: 0.5rem;
     }
   }
