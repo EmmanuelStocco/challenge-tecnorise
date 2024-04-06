@@ -4,7 +4,7 @@
 Cada parte deste projeto foi desenvolvida em uma branch correspondente. Ao clonar o repositório, certifique-se de estar na branch master (principal) ao iniciar os passos seguintes.
 
 2. **Configurações básicas:**
-Para iniciar o projeto corretamente, lembrese de criar um aquivo .env na raiz e colocar um token de API do Github. O git exige o token para permitir o uso da GraphQL API. Você pode utilizar o .env copy como base.
+Para iniciar o projeto corretamente, lembrese de criar um aquivo .env na raiz e colocar um token de API do Github. O git exige o token para permitir o uso da GraphQL API. Você pode utilizar o .env_example como base.
 
 3. **Instalar dependencias:** 
 Utilize os seguintes comandos para instalar as dependências na sua maquina:
@@ -32,5 +32,7 @@ O servidor por padrão vai iniciar na porta 3000. Agora você já consegue utili
 
 
 
+## Hospedagem
+A aplicação foi hospedada na Vercel, você pode conferir e testar [clicando aqui](https://challenge-tecnorise.vercel.app/).
 
 
