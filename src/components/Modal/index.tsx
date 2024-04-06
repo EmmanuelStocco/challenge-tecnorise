@@ -13,6 +13,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ data }) => { 
+    console.log('data', data)
     const dispatch = useDispatch(); 
     const handleClose = () => {
         dispatch(resetSingleRepositoryDetails());
@@ -21,8 +22,19 @@ const Modal: React.FC<ModalProps> = ({ data }) => {
         <ModalContainer>
             <ModalContent>
                 <ModalCloseButton onClick={handleClose}>X</ModalCloseButton> 
-                {data && <h1>{String(data.name)}</h1>}
-                {data && <h1>{String(data.watchers)}</h1>}
+                {data && <h1>Nome do Repo: {String(data.name)}</h1>} 
+                <p>Watchers {data.watchers.totalCount}</p>
+                <p>Issues {data.issues.totalCount}</p>
+                <p>Estrelas {data.stargazerCount}</p>
+                <p>Forks {data.forks.totalCount}</p>
+                <p>Descrição {data.description}</p>
+                <p>Pull Request {data.pullRequests.totalCount}</p>
+                <p>Linguagens utilizadas: {data.languages.nodes.map((e) => e.name)}</p>
+                <p>Proprietário: {data.owner.login} </p>
+
+
+
+
 
             </ModalContent>
         </ModalContainer>
