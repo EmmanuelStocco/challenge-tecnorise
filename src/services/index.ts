@@ -79,6 +79,6 @@ export async function searchSingleRepositoryDetailsById(repoName: string, repoUs
         body: JSON.stringify({ query})
       });
 
-      const data = await res.json();
-      console.log('Data:', data); 
+      const { data } = await res.json();
+      return data;
 };

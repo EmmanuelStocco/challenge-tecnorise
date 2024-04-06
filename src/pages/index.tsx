@@ -8,10 +8,11 @@ import { bindActionCreators, Dispatch } from 'redux';
 import * as RepositoriesActions from '../store/ducks/repositories/actions';
 import { SearchBar } from '../components/SearchBar'; 
 import TextIntro from '../components/TextTitle'; 
+import { loadSingleRepositoryRequest } from '../store/ducks/singleRepositoryDetails/actions';
 
-interface HomePageProps {
-  children: ReactNode;
-}
+// interface HomePageProps {
+//   children: ReactNode;
+// }
 
 interface StateProps {
   repositories: Repository[]
@@ -20,6 +21,7 @@ interface StateProps {
 
 interface DispatchProps {
   loadRequest(searchTerm: string): void;
+  loadSingleRepository(repoName: string, repoUser: string): void;
 }
 
 interface OwnProps {
@@ -29,21 +31,32 @@ interface OwnProps {
 type Props = StateProps & DispatchProps & OwnProps;
 
 const HomePage: React.FC<Props> = (props) => {
-  const { loadRequest, repositories, singleRepositoryDetails } = props;
+  const { 
+    repositories,
+    singleRepositoryDetails,
+    loadRequest,
+    loadSingleRepository 
+  } = props;
 
   const handleSearch = (searchTerm: string) => { 
     loadRequest(searchTerm);
   };
 
+  const handleLoadSingleRepository = () => {
+    loadSingleRepository('react', 'facebook'); // Substitua 'repoName' e 'repoUser' pelos valores que deseja testar
+  };
+
   useEffect(() => {
     console.log('repositories XXX', repositories);
     console.log('singleRepositoryDetails', singleRepositoryDetails)
-  }, [repositories]);
+  }, [repositories, singleRepositoryDetails]);
 
   return (
     <Container>
       <TextIntro title='Pesquise o repositório'/>
       <SearchBar handleSearch={handleSearch} />   
+      <button onClick={handleLoadSingleRepository}>Load Single Repository</button>   
+
     </Container>
   );
 };
@@ -54,6 +67,6 @@ const mapStateToProps = (state: ApplicationState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(RepositoriesActions, dispatch);
+  bindActionCreators({ ...RepositoriesActions, loadSingleRepository: loadSingleRepositoryRequest }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
