@@ -24,7 +24,7 @@ export function RepositoryTable  ({ repositories }: TableProps) {
     <TableContainer>
       <TableHead>
         <TableHeadRow>
-          <TableHeadCell>Nome do Repositório</TableHeadCell>
+          <TableHeadCell>Repositório</TableHeadCell>
           <TableHeadCell>Descrição</TableHeadCell>
           <TableHeadCell>Proprietário</TableHeadCell>
         </TableHeadRow>

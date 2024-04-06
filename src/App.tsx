@@ -3,8 +3,7 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components'; 
 import { lightTheme, darkTheme } from './styles/theme'; 
 import HomePage from './pages'; 
-import store from './store';
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import store from './store'; 
 
 
 function App() { 
@@ -17,13 +16,7 @@ function App() {
   };   
   return (
     <Provider store={store}>
-    <ThemeProvider theme={theme}>  
-      {/* <ToggleButton onClick={toggleTheme}>Toggle Theme</ToggleButton>   */}
-      {/* <DarkModeSwitch
-      style={{  right: '2rem' }} 
-      onChange={toggleTheme}
-      size={100}
-    /> */}
+    <ThemeProvider theme={theme}>   
        <HomePage 
        darkThemeCurrent={darkThemeCurrent} 
       toggleTheme={toggleTheme}
